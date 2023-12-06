@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<style>
+    /* header */
+    /* header */
+    * {
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+
+    .header {
+        height: 100px;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .heading {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 70%;
+
+    }
+
+    .about {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 100px;
+
+    }
+
+    .logout {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 100px;
+
+    }
+
+    h2 {
+        color: wheat;
+        text-align: center;
+    }
+
+
+
+    /* end */
+
+    /* '''' */
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+
+    .page {
+        height: 530px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .image {
+        width: 80%;
+
+    }
+
+    .resultForm {
+        width: 84%;
+        background-color: brown;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0.75;
+        }
+    }
+
+    /* .. */
+    .color {
+        color: wheat;
+        margin-right: 8px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .align {
+        text-align: center;
+    }
+
+    .wid {
+        width: 300px;
+        margin-left: 40px;
+    }
+
+    .widd {
+        width: 300px;
+        margin-left: 50px;
+    }
+
+    .widdd {
+        width: 300px;
+        margin-left: 2px;
+
+    }
+
+    /* .heading {
+        margin-top: 80px;
+    } */
+
+    .studentForm {
+        margin-left: 75px;
+        margin-top: 50px;
+    }
+
+    .button {
+        /* margin-left:20px; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    }
+
+    .footer {
+        height: 50px;
+        background-color: brown;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <div class="heading">
+            <h2>Result Management Portal</h2>
+        </div>
+        <div class="about"><button class="btn btn-primary">About</button></div>
+        <div class="logout"><a href='/logout'><button type="click" (click)="logoutUser()"
+            class="btn btn-primary">Logout</button></a>
+        </div>
+
+    </div>
+    <div class="page">
+        <div class="image"><img src="https://wallpapercave.com/wp/wp7453551.jpg" height="530px" width="670px" /></div>
+        <div class="resultForm">
+            <div class="heading ">
+                <h3 class="color align">Find Result</h3>
+            </div>
+            <div class="studentForm">
+                <form action="/studentresult">
+                    <div class="mb-3 box">
+                        <label class="form-label color">Roll No:</label>
+                        <input type="number" class="form-control wid" 
+                            placeholder="enter rollno" name="rollno">
+
+                    </div>
+                    <div class="mb-3 box">
+                        <label class="form-label color">Name:</label>
+                        <input type="text" class="form-control widd" placeholder="enter name" name="name">
+                    </div>
+
+                    <div class="mb-3 box">
+                        <label class="form-label color">Date Of Birth:</label>
+                        <input type="date" class="form-control widdd"  placeholder="enter date" name="DateOfBirth">
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        <!-- <button type="click" (click)="CancelForm()" class="btn btn-primary">Cancel</button> -->
+                    </div>
+                    <!-- <span>{{results.DateOfBirth}}</span> -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

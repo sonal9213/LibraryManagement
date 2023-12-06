@@ -1,0 +1,27 @@
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = 'sonalsecret'; // Replace with your own secret key
+
+function teacherauthenticate(req, res, next) {
+    const token = req.cookies.token; 
+    console.log(token);
+
+    if (!token) {
+        return res.status(401).json({ message: 'Access denied' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, SECRET_KEY);
+        if(decoded.role==true){
+            next();
+        }
+        else{
+            return res.status(401).json({ message: 'Access denied' });
+        }
+        
+    } catch (error) {
+        console.error(error);
+        res.status(403).json({ message: 'Invalid token' });
+    }
+}
+
+module.exports=teacherauthenticate;
